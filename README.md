@@ -1,4 +1,4 @@
-#Instructions of calculating csv Scale Fators
+##Instructions of calculating csv Scale Fators
 
 ###Step 0: get a GitHub account. 
 If you already have one, go to step 1.
@@ -11,8 +11,8 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 
 ###Step 3: Making trees
 
- 1. ####tree making script:  ttHMultileptonAnalysis/TemplateMakers/bin/csvSF.C
- 2. ####file lists for the skims of all samples: ttHMultileptonAnalysis/listsForSkims2012_53x_v2_hadoop/*list
+ 1. tree making script:  ttHMultileptonAnalysis/TemplateMakers/bin/csvSF.C
+ 2. file lists for the skims of all samples: ttHMultileptonAnalysis/listsForSkims2012_53x_v2_hadoop/*list
 
 // you need to change the path of the skim files accordingly in *list
 
@@ -36,7 +36,7 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 // The output goes in batchBEAN/${sample}_${label}/ 
 
 #### $ hadd output root files 
- * ####datasets
+ * datasets
 
 > hadd -f TwoMuon.root DoubleMu_Run2012**{*label}/*root
 
@@ -44,7 +44,7 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 
 > hadd -f MuonEle.root MuEG_Run2012**{*label}/*root
 
- * #### MC
+ * MC
 
 > hadd -f allMC.root  ttbar*{label}/*root singlet*{label}/*root wjets*{label}/*root zjets*{label}/*root ww*{label}/*root wz*{label}/*root zz*{label}/*root 
 
@@ -63,11 +63,11 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
  (mv the root files from hadd above to dataMCRootFiles)
 
 2. #### version0 SF calculation
- * #### light flavor scale factor
+ *  light flavor scale factor
 
  > root -l lightflavorCSVSF.C
 
- * #### heavy flavor scale factor
+ *  heavy flavor scale factor
 
  > root -l heavyflavorCSVSF.C
 
