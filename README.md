@@ -71,7 +71,7 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 
  > root -l heavyflavorCSVSF.C
 
- // the scale factors version 0 will be stored at **csv_rwt_hf_v0.root** and **csv_rwt_lf_v0.root**
+  the scale factors version 0 will be stored at **csv_rwt_hf_v0.root** and **csv_rwt_lf_v0.root**
 
 3. #### Do multiple Iterations  (tricky part)
 
