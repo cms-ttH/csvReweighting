@@ -77,9 +77,9 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 
 * 3a: replace SF files (x --> iteration version number)
 
-    > mv csv_rwt_lf_v{x}.root ttHMultileptonAnalysis/TemplateMakers/data/btag/csv_rwt_lf_IT.root
+    > mv csv_rwt_lf_v{x}.root BEAN/BEANmaker/data/csv_rwt_lf_IT.root
 
-    > mv csv_rwt_hf_v{x}.root ttHMultileptonAnalysis/TemplateMakers/data/btag/csv_rwt_hf_IT.root
+    > mv csv_rwt_hf_v{x}.root BEAN/BEANmaker/data/csv_rwt_hf_IT.root
 
 * 3b: remake the MC trees following Step 3, new csv weigths (**csvWgtlf, csvWgthf**) based on SFs version{x} will be saved
 
