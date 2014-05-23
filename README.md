@@ -96,4 +96,34 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
  // the scale factors version x+1 will be stored at **csv_rwt_hf_v{x+1}.root** and **csv_rwt_lf_v{x+1}**.root
 
 
-###Step5: SF fitting and extrapolation (ToDo)
+###Step5: SF fitting and extrapolation
+
+1. #### Create HistoFiles directory and put all inputs there 
+
+ > mkdir HistoFiles
+
+ > cp $CMSSW_BASE/src/BEAN/BEANmaker/data/mc_btag_efficiency_8TeV_53x.root HistoFiles/
+
+ > cp csv_rwt_*f_IT_v2*.root HistoFiles/
+
+2. #### Run scripts to create Statistics scale factors and wait for that to finish
+
+ > root -b -q fit_csvSF_HF_statErr.C+ > & ! out_fit_csvSF_HF_statErr.log &
+
+ > root -b -q fit_csvSF_LF_statErr.C+ > & ! out_fit_csvSF_LF_statErr.log &
+
+3. #### Run scripts to do the fitting and making image files
+
+ > mkdir Images
+
+ > root -b -q fit_csvSF_HF.C+
+
+ > root -b -q fit_csvSF_LF.C+
+
+4. #### Remove unnecessary histograms from files to reduce size, bloat
+
+ > root -b -q drop_histograms.C+'("HistoFiles/csv_rwt_hf_final_IT_v2.root","csv_rwt_hf_final_IT_v2.root")'
+
+ > root -b -q drop_histograms.C+'("HistoFiles/csv_rwt_lf_final_IT_v2.root","csv_rwt_lf_final_IT_v2.root")'
+
+
