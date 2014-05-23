@@ -190,11 +190,14 @@ void heavyflavorCSVSF(){
   hClone->SetLineColor(kBlue);
 
   TH1F *hratio = (TH1F*)hClone->Clone(Form("csv_ratio_Pt%i_Eta%i_final",iPt,iEta));
+  TH1F *hcharm = (TH1F*)hClone->Clone(Form("c_csv_ratio_Pt%i_Eta%i_final",iPt,iEta));
+  hcharm->Divide(hcharm,hration);
   histTemp3->SetDirectory(outputFile);
   histTemp3a->SetDirectory(outputFile);
   histTemp5a->SetDirectory(outputFile);
   hratio->SetDirectory(outputFile);
   hsub->SetDirectory(outputFile);
+  hcharm->SetDirectory(outputFile);
 
   can1a->cd();
 
