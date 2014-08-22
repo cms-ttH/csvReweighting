@@ -20,16 +20,16 @@ Following instructions here: https://github.com/cms-ttH/ttHMultileptonAnalysis
 
 > cd ttHMultileptonAnalysis/TemplateMakers/test/
 
-> csvSF ssCondor.py zz test 1 10
+> csvSF ssCondor.py wz test NA 1 10
 
-// csvSF ssCondor.py sample lable jobNumber totalJobs
+// csvSF ssCondor.py sample lable JES_syst(NA, JESUp, or JESDown) jobNumber totalJobs
 
-// This runs a test job on sample zz, year 2012_53x, job_label test, job number 1 out of 10 total jobs. The command runs locally, the output goes in batchBEAN/zz_test/  
+// This runs a test job on sample zz, year 2012_53x, job_label test, JES_syst nominal, job number 1 out of 10 total jobs. The command runs locally, the output goes in batchBEAN/zz_test/  
 
 
 #### $ To run the full set of jobs, do the following (runs on batch queue!): 
 
-> ./submit_condor_jobs.py csvSF label
+> ./submit_condor_jobs.py csvSF label -j JES_syst
 
 // this submits one group of jobs for each list file in csvSF_lists.txt. The number of jobs in the  group is one for each line in the list file.
 
